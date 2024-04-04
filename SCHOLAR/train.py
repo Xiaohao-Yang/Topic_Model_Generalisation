@@ -4,7 +4,7 @@ from utils import *
 import time
 import os
 import sys
-sys.path.append('../TM_Gen_Github')
+sys.path.append('../Topic_Model_Generalisation-main')
 from read_data import *
 from doc_aug import *
 from eval import *
