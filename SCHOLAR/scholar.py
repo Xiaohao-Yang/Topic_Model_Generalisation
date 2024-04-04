@@ -6,7 +6,7 @@ from torch.nn.init import xavier_uniform_
 import copy
 from torchmetrics.functional import pairwise_euclidean_distance
 import sys
-sys.path.append('../TM_Gen_Github')
+sys.path.append('../Topic_Model_Generalisation-main')
 from doc_dist import *
 
 
