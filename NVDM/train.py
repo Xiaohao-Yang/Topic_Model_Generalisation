@@ -5,7 +5,7 @@ from nvdm_torch import *
 from dataset import *
 
 import sys
-sys.path.append('../TM_Gen_Github')
+sys.path.append('../Topic_Model_Generalisation-main')
 from doc_aug import *
 from doc_dist import *
 from read_data import *
