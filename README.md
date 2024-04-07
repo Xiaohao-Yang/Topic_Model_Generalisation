@@ -14,11 +14,9 @@ tqdm: 4.66.2
 ```
 
 # Datasets
-We store our pre-processed datasets in .mat files, which can be loaded as dictionaries using scipy.io.loadmat().
-
-The datasets/dictionaries have the following common attributes/keys:
-wordsTrain, labelsTrain: bag-of-words (BOW) of training documents, and their labels. 
-wordsTest, labelsTest: BOW of testing documents, and their labels.
+We store our pre-processed datasets in .mat files, which can be loaded as dictionaries using scipy.io.loadmat(). The datasets/dictionaries have the following common attributes/keys:
+* wordsTrain, labelsTrain: bag-of-words (BOW) of training documents, and their labels. 
+* wordsTest, labelsTest: BOW of testing documents, and their labels.
 
 
 # Run topic models with Greg
