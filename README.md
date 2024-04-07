@@ -18,7 +18,9 @@ We store our pre-processed datasets in .mat files, which can be loaded as dictio
 * wordsTrain, labelsTrain: bag-of-words (BOW) of training documents, and their labels. 
 * wordsTest, labelsTest: BOW of testing documents, and their labels.
 * vocabulary, embeddings: vocabularies of the corpus, and their word embeddings from `glove-wiki-gigaword-50'.
+* test1, test2: the first and second fold of the test BOWs (for computing document completion perplexity). 
 
+For source-to-target tasks, 
 # Run topic models with Greg
 
 # Results
