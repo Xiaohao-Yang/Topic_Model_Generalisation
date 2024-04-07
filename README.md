@@ -1,5 +1,5 @@
 # Topic Model Generalisation
-Neural topic model generalisation in terms of document representation.
+Neural topic model (NTM) generalisation in terms of document representation. We propose a Generalisation Regularisation (Greg) term to improve NTMs' generalisation capability in terms of document representation. A trained NTM still yields good document representation quality for unseen documents from other corpora.
 
 # Requirements
 ```python
@@ -20,11 +20,14 @@ We store our pre-processed datasets in .mat files, which can be loaded as dictio
 * vocabulary, embeddings: vocabularies of the corpus, and their word embeddings from `glove-wiki-gigaword-50'.
 * test1, test2: the first and second fold of the test BOWs (for computing document completion perplexity). 
 
-For source-to-target tasks, the source and target data have an extra suffix (e.g. wordsTrain_source, wordsTrain_target).
+For source-to-target tasks, the source and target data have an extra suffix (e.g. `wordsTrain_source' and `wordsTrain_target').
 
 For source-to-noisy tasks, the noisy target is stored in a separate `data_aug.mat' file.
 
 # Run topic models with Greg
+To run original topic models:
+
+To run topic models with Greg
 
 # Results
 
