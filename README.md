@@ -1,5 +1,7 @@
 # Topic Model Generalisation
-Neural topic model (NTM) generalisation in terms of document representation. We propose a Generalisation Regularisation (Greg) term to improve NTMs' generalisation capability in terms of document representation. A trained NTM still yields good document representation quality for unseen documents from other corpora.
+Neural topic model (NTM) generalisation in terms of document representation. 
+
+We propose a Generalisation Regularisation (Greg) term to improve NTMs' generalisation capability in terms of document representation. As a result, an NTM trained on a source corpus still yields good document representation quality for unseen documents from other corpora.
 
 # Requirements
 ```python
