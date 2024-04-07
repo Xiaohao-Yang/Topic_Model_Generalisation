@@ -3,7 +3,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 from torch.nn.init import xavier_uniform_
-import copy
 from torchmetrics.functional import pairwise_euclidean_distance
 import sys
 sys.path.append('../Topic_Model_Generalisation-main')
