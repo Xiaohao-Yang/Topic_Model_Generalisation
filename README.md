@@ -42,46 +42,47 @@ python main.py --model NVDM --dataset combined_20News_RestAll --n_topic 50 --use
 # Results
 We evaluate the document representation quality at every evaluation step (e.g. --eval_step=5). The evaluation is done by document classification and clustering for both source and target documents.
 
-A running example without Greg at epoch 5:
+A running example without Greg at epoch 50:
 ```python
 ############################################
 Evaluation at: 
-NVDM_dataset:combined_20News_RestAll_K50_RS1_epochs:5_LR0.0003_reg:False_regW300.0_augRate:0.5_aug:DA2
+NVDM_dataset:combined_20News_RestAll_K50_RS1_epochs:50_LR0.0003_reg:False_regW300.0_augRate:0.5_aug:DA2
 
-doc classification acc (original corpus):  0.13582049920339884
-doc classification acc (R8):  0.5420195439739414
-doc classification acc (DBpedia):  0.11627906976744186
-doc classification acc (TMN):  0.2532208588957055
-doc classification acc (Webs):  0.2068825910931174
+doc classification acc (original corpus):  0.3967073818374934
+doc classification acc (R8):  0.7035830618892508
+doc classification acc (DBpedia):  0.2738184546136534
+doc classification acc (TMN):  0.3679447852760736
+doc classification acc (Webs):  0.362753036437247
 ############################################
-doc clustering TP, TN (original corpus):  0.14803505045140733 0.08224453123476097
-doc clustering TP, TN (R8):  0.5648208469055375 0.0853463317318213
-doc clustering TP, TN (DBpedia):  0.15053763440860216 0.052946872286005184
-doc clustering TP, TN (TMN):  0.27254601226993863 0.01489680754762807
-doc clustering TP, TN (Webs):  0.24898785425101214 0.03753304850686483
+doc clustering TP, TN (original corpus):  0.16330323951141795 0.11003465044205976
+doc clustering TP, TN (R8):  0.6319218241042345 0.1279169527204744
+doc clustering TP, TN (DBpedia):  0.1827956989247312 0.07871181078741796
+doc clustering TP, TN (TMN):  0.3214723926380368 0.034599746750148555
+doc clustering TP, TN (Webs):  0.2813765182186235 0.06003729503945232
 ############################################
-source document completion ppl:  17761.1
+source document completion ppl:  15523.4
 ############################################
 ```
 
-A running example with Greg at epoch 5:
+A running example with Greg at epoch 50:
 ```python
-valuation at: 
-NVDM_dataset:combined_20News_RestAll_K50_RS1_epochs:5_LR0.0003_reg:False_regW300.0_augRate:0.5_aug:DA2
+############################################
+Evaluation at: 
+NVDM_dataset:combined_20News_RestAll_K50_RS1_epochs:50_LR0.0003_reg:True_regW300.0_augRate:0.5_aug:DA2
 
-doc classification acc (original corpus):  0.13582049920339884
-doc classification acc (R8):  0.5420195439739414
-doc classification acc (DBpedia):  0.11627906976744186
-doc classification acc (TMN):  0.2532208588957055
-doc classification acc (Webs):  0.2068825910931174
+doc classification acc (original corpus):  0.4159585767392459
+doc classification acc (R8):  0.7817589576547231
+doc classification acc (DBpedia):  0.49087271817954486
+doc classification acc (TMN):  0.5625766871165644
+doc classification acc (Webs):  0.5817813765182186
 ############################################
-doc clustering TP, TN (original corpus):  0.14803505045140733 0.08224453123476097
-doc clustering TP, TN (R8):  0.5648208469055375 0.0853463317318213
-doc clustering TP, TN (DBpedia):  0.15053763440860216 0.052946872286005184
-doc clustering TP, TN (TMN):  0.27254601226993863 0.01489680754762807
-doc clustering TP, TN (Webs):  0.24898785425101214 0.03753304850686483
+doc clustering TP, TN (original corpus):  0.16648964418481146 0.11442718376169024
+doc clustering TP, TN (R8):  0.6436482084690553 0.15272100820116064
+doc clustering TP, TN (DBpedia):  0.24081020255063765 0.14740831169213556
+doc clustering TP, TN (TMN):  0.4170245398773006 0.10636887676325055
+doc clustering TP, TN (Webs):  0.33765182186234816 0.11487270835789015
 ############################################
-source document completion ppl:  17761.1
+source document completion ppl:  15433.4
 ############################################
 ```
 
@@ -89,7 +90,7 @@ Here is one of our results, for 5 runs of 20News as the source, the rest as the 
 <p align="center">
   <img src="results.png" alt="results" width="1000"/>
 </p>
-Overall, Greg brings significant improvements to the original models in most cases regarding neural topical generalisation.
+Overall, Greg brings significant improvements to the original models in most cases regarding neural topical generalisation. See more details in our [Paper]().
 
 # References
 Our code is based on the following implementations:
