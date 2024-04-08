@@ -66,11 +66,11 @@ source document completion ppl:  17761.1
 
 A running example with Greg at epoch 5:
 
-A result for 5 runs of 20News as the source, the rest as the targets, where the number of topics for models is set as 50:
+Here is one of our results, for 5 runs of 20News as the source, the rest as the targets, where the number of topics for models is set as 50. 
 <p align="left">
   <img src="result_table.png" width="500"/>
 </p>
-
+Overall, Greg brings significant improvements to the original models in most cases regarding neural topical generalisation.
 
 
 
