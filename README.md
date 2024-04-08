@@ -37,6 +37,25 @@ python main.py --model NVDM --dataset combined_20News_RestAll --n_topic 50
 To run topic models with Greg:
 
 # Results
+```python
+Evaluation at: 
+NVDM_dataset:combined_20News_RestAll_K50_RS1_epochs:5_LR0.0003_reg:False_regW300.0_augRate:0.5_aug:DA2
+
+doc classification acc (original corpus):  0.13582049920339884
+doc classification acc (R8):  0.5420195439739414
+doc classification acc (DBpedia):  0.11627906976744186
+doc classification acc (TMN):  0.2532208588957055
+doc classification acc (Webs):  0.2068825910931174
+############################################
+doc clustering TP, TN (original corpus):  0.14803505045140733 0.08224453123476097
+doc clustering TP, TN (R8):  0.027881040892193308 0.032690018236303256
+doc clustering TP, TN (DBpedia):  0.0523101433882103 0.027482719778563033
+doc clustering TP, TN (TMN):  0.07408390865639937 0.02058310038988435
+doc clustering TP, TN (Webs):  0.03451938396176314 0.02639708531110647
+############################################
+document completion ppl:  17761.1
+############################################
+```
 
 # Citation 
 
