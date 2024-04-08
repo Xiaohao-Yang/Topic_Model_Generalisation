@@ -65,6 +65,25 @@ source document completion ppl:  17761.1
 ```
 
 A running example with Greg at epoch 5:
+```python
+valuation at: 
+NVDM_dataset:combined_20News_RestAll_K50_RS1_epochs:5_LR0.0003_reg:False_regW300.0_augRate:0.5_aug:DA2
+
+doc classification acc (original corpus):  0.13582049920339884
+doc classification acc (R8):  0.5420195439739414
+doc classification acc (DBpedia):  0.11627906976744186
+doc classification acc (TMN):  0.2532208588957055
+doc classification acc (Webs):  0.2068825910931174
+############################################
+doc clustering TP, TN (original corpus):  0.14803505045140733 0.08224453123476097
+doc clustering TP, TN (R8):  0.5648208469055375 0.0853463317318213
+doc clustering TP, TN (DBpedia):  0.15053763440860216 0.052946872286005184
+doc clustering TP, TN (TMN):  0.27254601226993863 0.01489680754762807
+doc clustering TP, TN (Webs):  0.24898785425101214 0.03753304850686483
+############################################
+source document completion ppl:  17761.1
+############################################
+```
 
 Here is one of our results, for 5 runs of 20News as the source, the rest as the targets, where the number of topics for models is set as 50. 
 <p align="center">
