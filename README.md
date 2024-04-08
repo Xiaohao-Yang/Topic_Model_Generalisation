@@ -93,7 +93,7 @@ Here is one of our results (Table 4), for 5 runs of 20News as the source, and th
 <p align="center">
   <img src="results.png" alt="results" width="1000"/>
 </p>
-Overall, Greg brings significant (Table 9-11) improvements to the original models in most cases regarding neural topical generalisation. See more details in our [paper](https://arxiv.org/pdf/2307.12564.pdf).
+Overall, Greg brings significant (Table 9-11) improvements to the original models in most cases regarding neural topical generalisation. See more details in our [Paper](https://arxiv.org/pdf/2307.12564.pdf).
 
 # References
 Our code is based on the following implementations:
