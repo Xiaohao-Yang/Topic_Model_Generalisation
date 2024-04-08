@@ -98,6 +98,48 @@ def perplexity(model, test_1, test_2, beta):
     return ppl
 
 
+def get_doc_rep_source(model, name, data_dict):
+    if name in ['CLNTM', 'SCHOLAR']:
+        train_theta = model.get_theta(data_dict['train_data'], data_dict['train_label'])
+        test_theta = model.get_theta(data_dict['test_data'], data_dict['test_label'])
+    else:
+        train_theta = model.get_theta(data_dict['train_data']).cpu().detach().numpy()
+        test_theta = model.get_theta(data_dict['test_data']).cpu().detach().numpy()
+
+    return train_theta, test_theta
+
+
+def get_doc_rep_target(model, name, data_dict):
+    train_theta_targets = []
+    test_theta_targets = []
+    if isinstance(data_dict['train_data_target'], list):  # if multiple targets
+        for i in range(len(data_dict['train_data_target'])):
+            if name in ['CLNTM', 'SCHOLAR']:
+                train_theta_target = model.get_theta(data_dict['train_data_target'][i],
+                                                     data_dict['train_label_target'][i])
+                test_theta_target = model.get_theta(data_dict['test_data_target'][i],
+                                                    data_dict['test_label_target'][i])
+            else:
+                train_theta_target = model.get_theta(data_dict['train_data_target'][i]).cpu().detach().numpy()
+                test_theta_target = model.get_theta(data_dict['test_data_target'][i]).cpu().detach().numpy()
+
+            train_theta_targets.append(train_theta_target)
+            test_theta_targets.append(test_theta_target)
+
+    else:  # only one target
+        if name in ['CLNTM', 'SCHOLAR']:
+            train_theta_target = model.get_theta(data_dict['train_data_target'], data_dict['train_label_target'])
+            test_theta_target = model.get_theta(data_dict['test_data_target'], data_dict['test_label_target'])
+        else:
+            train_theta_target = model.get_theta(data_dict['train_data_target']).cpu().detach().numpy()
+            test_theta_target = model.get_theta(data_dict['test_data_target']).cpu().detach().numpy()
+
+        train_theta_targets.append(train_theta_target)
+        test_theta_targets.append(test_theta_target)
+
+    return train_theta_targets, test_theta_targets
+
+
 def evaluation(model, epoch, data_dict, args):
     model.eval()
 
@@ -105,7 +147,9 @@ def evaluation(model, epoch, data_dict, args):
                         % (args.name, args.dataset, args.n_topic, args.seed, epoch, args.lr,
                            args.regularisation, args.reg_weight, args.aug_rate, args.DA)
     print('############################################')
+    print('Evaluation at: ')
     print(parameter_setting)
+    print()
 
     # save topics, for further evaluation of topic coherence
     # save_dir = None # define your own path
@@ -117,28 +161,18 @@ def evaluation(model, epoch, data_dict, args):
     emb = softmax_np(emb, -1)
 
     # document representations
-    if args.name in ['CLNTM', 'SCHOLAR']:
-        train_theta = model.get_theta(data_dict['train_data'], data_dict['train_label'])
-        test_theta = model.get_theta(data_dict['test_data'], data_dict['test_label'])
-    else:
-        train_theta = model.get_theta(data_dict['train_data']).cpu().detach().numpy()
-        test_theta = model.get_theta(data_dict['test_data']).cpu().detach().numpy()
+    train_theta, test_theta = get_doc_rep_source(model, args.name, data_dict)
+    train_theta_targets, test_theta_targets = get_doc_rep_target(model, args.name, data_dict)
 
-    # source doc classification evaluation
+    # source doc acc evaluation
     source_acc = rf_cls(train_theta, data_dict['train_label'], test_theta, data_dict['test_label'])
 
-    # target doc classification evaluation
-    if isinstance(data_dict['train_data_target'], list):  # if multiple targets
+    # target doc acc evaluation
+    if len(train_theta_targets) > 1: # if multiple targets
         target_accs = []
-        for i in range(4):
-            if args.name in ['CLNTM', 'SCHOLAR']:
-                train_theta_target = model.get_theta(data_dict['train_data_target'][i], data_dict['train_label_target'][i])
-                test_theta_target = model.get_theta(data_dict['test_data_target'][i], data_dict['test_label_target'][i])
-            else:
-                train_theta_target = model.get_theta(data_dict['train_data_target'][i]).cpu().detach().numpy()
-                test_theta_target = model.get_theta(data_dict['test_data_target'][i]).cpu().detach().numpy()
-
-            target_acc = rf_cls(train_theta_target, data_dict['train_label_target'][i], test_theta_target, data_dict['test_label_target'][i])
+        for i in range(len(train_theta_targets)):
+            target_acc = rf_cls(train_theta_targets[i], data_dict['train_label_target'][i],
+                                test_theta_targets[i], data_dict['test_label_target'][i])
             target_accs.append(target_acc)
 
         print('doc classification acc (original corpus): ', source_acc)
@@ -148,16 +182,44 @@ def evaluation(model, epoch, data_dict, args):
         print('doc classification acc (Webs): ', target_accs[3])
 
     else: # only one target
-        train_theta_target = model.get_theta(data_dict['train_data_target']).cpu().detach().numpy()
-        test_theta_target = model.get_theta(data_dict['test_data_target']).cpu().detach().numpy()
-        target_acc = rf_cls(train_theta_target, data_dict['train_label_target'], test_theta_target, data_dict['test_label_target'])
+        target_acc = rf_cls(train_theta_targets[0], data_dict['train_label_target'],
+                            test_theta_targets[0], data_dict['test_label_target'])
 
         print('doc classification acc (original corpus): ', source_acc)
         print('doc classification acc (target corpus): ', target_acc)
 
+    # source doc clustering evaluation
+    print('############################################')
+    test_labels = np.squeeze(data_dict['test_label'])
+    TP_source, TN_source = evaluate_TP_TN(test_labels, test_theta)
+
+    # target doc clustering evaluation
+    if len(train_theta_targets) > 1: # if multiple targets
+        TP_targets = []
+        TN_targets = []
+        for i in range(len(train_theta_targets)):
+            TP_target, TN_target = evaluate_TP_TN(test_labels, test_theta_targets[i])
+            TP_targets.append(TP_target)
+            TN_targets.append(TN_target)
+
+        print('doc clustering TP, TN (original corpus): ', TP_source, TN_source)
+        print('doc clustering TP, TN (R8): ', TP_targets[0], TN_targets[0])
+        print('doc clustering TP, TN (DBpedia): ', TP_targets[1], TN_targets[1])
+        print('doc clustering TP, TN (TMN): ', TP_targets[2], TN_targets[2])
+        print('doc clustering TP, TN (Webs): ', TP_targets[3], TN_targets[3])
+
+    else:
+        TP_target, TN_target = evaluate_TP_TN(test_labels, test_theta_targets[0])
+
+        print('doc clustering TP, TN (original corpus): ', TP_source, TN_source)
+        print('doc clustering TP, TN (target corpus): ', TP_target, TN_target)
+
+    # document completion perplexity
     if not args.name in ['CLNTM', 'SCHOLAR']:
         ppl = perplexity(model, data_dict['test1_data'], data_dict['test2_data'], emb)
     else:
         ppl = model.perplexity(data_dict['test1_data'], data_dict['test_1_label'], data_dict['test2_data'], emb)
+
+    print('############################################')
     print('document completion ppl: ', ppl)
     print('############################################')
