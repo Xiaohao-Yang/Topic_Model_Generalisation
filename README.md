@@ -67,9 +67,14 @@ source document completion ppl:  17761.1
 A running example with Greg at epoch 5:
 
 Here is one of our results, for 5 runs of 20News as the source, the rest as the targets, where the number of topics for models is set as 50. 
-<p align="left">
-  <img src="result_table.png" width="500"/>
-</p>
+<div style="display: flex; justify-content: center;">
+  <div style="margin-right: 10px;">
+    <img src="figures/result.png" alt="Image 1" width="400"/>
+  </div>
+  <div style="margin-left: 10px;">
+    <img src="p_value.png" alt="Image 2" width="400"/>
+  </div>
+</div>
 Overall, Greg brings significant improvements to the original models in most cases regarding neural topical generalisation.
 
 
