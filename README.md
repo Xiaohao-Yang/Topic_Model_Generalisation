@@ -87,7 +87,7 @@ doc clustering TP, TN (Webs):  0.33765182186234816 0.11487270835789015
 source document completion ppl:  15433.4
 ############################################
 ```
-We can notice that the document representation performance in terms of classification and clustering improved by Greg on both the source and different target corpora.
+We can notice that the document representation performance in terms of classification and clustering is improved by Greg on both the source and different target corpora.
 
 Here is one of our results (Table 4), for 5 runs of 20News as the source, and the rest as the targets, where the number of topics for models is set as 50. 
 <p align="center">
