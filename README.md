@@ -91,6 +91,29 @@ Here is one of our results, for 5 runs of 20News as the source, the rest as the 
 </p>
 Overall, Greg brings significant improvements to the original models in most cases regarding neural topical generalisation.
 
+# References
+Our code is based on the following repositories:
+```python
+@MISC {Carrow2018,
+    author       = "Stephen Carrow",
+    title        = "PyTorchAVITM: Open Source AVITM Implementation in PyTorch",
+    howpublished = "Github",
+    month        = "dec",
+    year         = "2018"
+}
+```
+
+```python
+@inproceedings{
+nguyen2021contrastive,
+title={Contrastive Learning for Neural Topic Model},
+author={Thong Thanh Nguyen and Anh Tuan Luu},
+booktitle={Advances in Neural Information Processing Systems},
+editor={A. Beygelzimer and Y. Dauphin and P. Liang and J. Wortman Vaughan},
+year={2021},
+url={https://openreview.net/forum?id=NEgqO9yB7e}
+}
+```
 
 
 # Citation 
