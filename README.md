@@ -117,6 +117,7 @@ year={2021},
 url={https://openreview.net/forum?id=NEgqO9yB7e}
 }
 ```
+* For Pytorch Sinkhorn distance: [Code](https://github.com/ethanhezhao/Tensorflow_Pytorch_Sinkhorn_OT)
 
 
 # Citation 
