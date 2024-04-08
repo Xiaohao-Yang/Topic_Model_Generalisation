@@ -86,11 +86,11 @@ source document completion ppl:  15433.4
 ############################################
 ```
 
-Here is one of our results, for 5 runs of 20News as the source, the rest as the targets, where the number of topics for models is set as 50. 
+Here is one of our results (Table 5), for 5 runs of 20News as the source, the rest as the targets, where the number of topics for models is set as 50. 
 <p align="center">
   <img src="results.png" alt="results" width="1000"/>
 </p>
-Overall, Greg brings significant improvements to the original models in most cases regarding neural topical generalisation. See more details in our [Paper]().
+Overall, Greg brings significant (Table 9-11) improvements to the original models in most cases regarding neural topical generalisation. See more details in our [Paper]().
 
 # References
 Our code is based on the following implementations:
