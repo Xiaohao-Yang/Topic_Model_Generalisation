@@ -37,6 +37,9 @@ python main.py --model NVDM --dataset combined_20News_RestAll --n_topic 50
 To run topic models with Greg:
 
 # Results
+We evaluate the document representation quality at every evaluation step (e.g. --eval_step=5). The evaluation is done be document classification and clustering for both source and target documents.
+
+A running example without Greg at epoch 5:
 ```python
 Evaluation at: 
 NVDM_dataset:combined_20News_RestAll_K50_RS1_epochs:5_LR0.0003_reg:False_regW300.0_augRate:0.5_aug:DA2
@@ -56,6 +59,11 @@ doc clustering TP, TN (Webs):  0.03451938396176314 0.02639708531110647
 document completion ppl:  17761.1
 ############################################
 ```
+
+A running example with Greg at epoch 5:
+
+Overall results:
+
 
 # Citation 
 
