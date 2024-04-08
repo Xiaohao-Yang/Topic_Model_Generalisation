@@ -65,7 +65,7 @@ document completion ppl:  17761.1
 
 A running example with Greg at epoch 5:
 
-An overall result for 20News as the source, the rest as the targets, where the number of topics for models are set as 50:
+A result for 5 runs of 20News as the source, the rest as the targets, where the number of topics for models is set as 50:
 <p align="left">
   <img src="result_table.png" width="600"/>
 </p>
