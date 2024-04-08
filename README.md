@@ -67,7 +67,7 @@ A running example with Greg at epoch 5:
 
 An overall result for 20News as the source, the rest as the targets:
 <p align="center">
-  <img src="result_table.png" width="800"/>
+  <img src="result_table.png" width="600"/>
 </p>
 
 
