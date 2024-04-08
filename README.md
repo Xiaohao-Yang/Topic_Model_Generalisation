@@ -65,7 +65,9 @@ document completion ppl:  17761.1
 
 A running example with Greg at epoch 5:
 
-Overall results:
+An overall result for 20News as the source, the rest as the targets:
+![Local Image](result_table.png)
+
 
 
 # Citation 
