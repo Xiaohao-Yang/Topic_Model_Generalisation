@@ -92,7 +92,12 @@ Here is one of our results, for 5 runs of 20News as the source, the rest as the 
 Overall, Greg brings significant improvements to the original models in most cases regarding neural topical generalisation.
 
 # References
-Our code is based on the following repositories:
+Our code is based on the following implementations:
+
+For NVDM :
+
+
+For PLDA:
 ```python
 @MISC {Carrow2018,
     author       = "Stephen Carrow",
@@ -103,6 +108,7 @@ Our code is based on the following repositories:
 }
 ```
 
+For SCHOLAR and CLNTM:
 ```python
 @inproceedings{
 nguyen2021contrastive,
