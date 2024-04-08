@@ -3,7 +3,7 @@ Neural topic model (NTM) generalisation in terms of document representation.
 
 We propose a Generalisation Regularisation (Greg) module to improve NTMs' generalisation capability in terms of document representation. As a result, an NTM trained on a source corpus still yields good document representation for unseen documents from other corpora.
 
-See details of our [Paper]().
+See details of our [Paper](https://arxiv.org/pdf/2307.12564.pdf).
 
 # Requirements
 ```python
@@ -93,7 +93,7 @@ Here is one of our results (Table 4), for 5 runs of 20News as the source, and th
 <p align="center">
   <img src="results.png" alt="results" width="1000"/>
 </p>
-Overall, Greg brings significant (Table 9-11) improvements to the original models in most cases regarding neural topical generalisation. See more details in our [Paper]().
+Overall, Greg brings significant (Table 9-11) improvements to the original models in most cases regarding neural topical generalisation. See more details in our [Paper](https://arxiv.org/pdf/2307.12564.pdf).
 
 # References
 Our code is based on the following implementations:
@@ -125,4 +125,13 @@ url={https://openreview.net/forum?id=NEgqO9yB7e}
 
 
 # Citation 
+Please cite our paper if it helps:
+```python
+@article{yang2023towards,
+  title={Towards Generalising Neural Topical Representations},
+  author={Yang, Xiaohao and Zhao, He and Phung, Dinh and Du, Lan},
+  journal={arXiv preprint arXiv:2307.12564},
+  year={2023}
+}
+```
 
