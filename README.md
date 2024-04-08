@@ -35,6 +35,9 @@ python main.py --model NVDM --dataset combined_20News_RestAll --n_topic 50
 ```
 
 To run topic models with Greg:
+```python
+python main.py --model NVDM --dataset combined_20News_RestAll --n_topic 50 --use_Greg
+```
 
 # Results
 We evaluate the document representation quality at every evaluation step (e.g. --eval_step=5). The evaluation is done be document classification and clustering for both source and target documents.
