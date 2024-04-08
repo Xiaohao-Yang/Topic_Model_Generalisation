@@ -72,7 +72,7 @@ Here is one of our results, for 5 runs of 20News as the source, the rest as the 
     <img src="figures/result.png" alt="Image 1" width="400"/>
   </div>
   <div style="margin-left: 10px;">
-    <img src="p_values.png" alt="Image 2" width="400"/>
+    <img src="figures/p_values.png" alt="Image 2" width="400"/>
   </div>
 </div>
 Overall, Greg brings significant improvements to the original models in most cases regarding neural topical generalisation.
