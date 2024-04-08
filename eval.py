@@ -142,7 +142,6 @@ def get_doc_rep_target(model, name, data_dict):
 
 def evaluation(model, epoch, data_dict, args):
     model.eval()
-
     parameter_setting = '%s_dataset:%s_K%s_RS%s_epochs:%s_LR%s_reg:%s_regW%s_augRate:%s_aug:%s' \
                         % (args.name, args.dataset, args.n_topic, args.seed, epoch, args.lr,
                            args.regularisation, args.reg_weight, args.aug_rate, args.DA)
@@ -190,15 +189,14 @@ def evaluation(model, epoch, data_dict, args):
 
     # source doc clustering evaluation
     print('############################################')
-    test_labels = np.squeeze(data_dict['test_label'])
-    TP_source, TN_source = evaluate_TP_TN(test_labels, test_theta)
+    TP_source, TN_source = evaluate_TP_TN(np.squeeze(data_dict['test_label']), test_theta)
 
     # target doc clustering evaluation
-    if len(train_theta_targets) > 1: # if multiple targets
+    if len(test_theta_targets) > 1: # if multiple targets
         TP_targets = []
         TN_targets = []
-        for i in range(len(train_theta_targets)):
-            TP_target, TN_target = evaluate_TP_TN(test_labels, test_theta_targets[i])
+        for i in range(len(test_theta_targets)):
+            TP_target, TN_target = evaluate_TP_TN(np.squeeze(data_dict['test_label_target'][i]), test_theta_targets[i])
             TP_targets.append(TP_target)
             TN_targets.append(TN_target)
 
@@ -209,7 +207,7 @@ def evaluation(model, epoch, data_dict, args):
         print('doc clustering TP, TN (Webs): ', TP_targets[3], TN_targets[3])
 
     else:
-        TP_target, TN_target = evaluate_TP_TN(test_labels, test_theta_targets[0])
+        TP_target, TN_target = evaluate_TP_TN(np.squeeze(data_dict['test_label_target']), test_theta_targets[0])
 
         print('doc clustering TP, TN (original corpus): ', TP_source, TN_source)
         print('doc clustering TP, TN (target corpus): ', TP_target, TN_target)
