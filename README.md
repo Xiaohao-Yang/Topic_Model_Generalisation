@@ -94,10 +94,8 @@ Overall, Greg brings significant improvements to the original models in most cas
 # References
 Our code is based on the following implementations:
 
-For NVDM: [code](https://github.com/visionshao/NVDM).
-
-
-For PLDA: [code](https://github.com/estebandito22/PyTorchAVITM).
+* For NVDM: [Code](https://github.com/visionshao/NVDM).
+* For PLDA: [Code](https://github.com/estebandito22/PyTorchAVITM).
 ```python
 @MISC {Carrow2018,
     author       = "Stephen Carrow",
@@ -107,8 +105,7 @@ For PLDA: [code](https://github.com/estebandito22/PyTorchAVITM).
     year         = "2018"
 }
 ```
-
-For SCHOLAR and CLNTM: [code](https://github.com/nguyentthong/CLNTM).
+* For SCHOLAR and CLNTM: [Code](https://github.com/nguyentthong/CLNTM).
 ```python
 @inproceedings{
 nguyen2021contrastive,
