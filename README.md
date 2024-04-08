@@ -44,6 +44,7 @@ We evaluate the document representation quality at every evaluation step (e.g. -
 
 A running example without Greg at epoch 5:
 ```python
+############################################
 Evaluation at: 
 NVDM_dataset:combined_20News_RestAll_K50_RS1_epochs:5_LR0.0003_reg:False_regW300.0_augRate:0.5_aug:DA2
 
@@ -54,12 +55,12 @@ doc classification acc (TMN):  0.2532208588957055
 doc classification acc (Webs):  0.2068825910931174
 ############################################
 doc clustering TP, TN (original corpus):  0.14803505045140733 0.08224453123476097
-doc clustering TP, TN (R8):  0.027881040892193308 0.032690018236303256
-doc clustering TP, TN (DBpedia):  0.0523101433882103 0.027482719778563033
-doc clustering TP, TN (TMN):  0.07408390865639937 0.02058310038988435
-doc clustering TP, TN (Webs):  0.03451938396176314 0.02639708531110647
+doc clustering TP, TN (R8):  0.5648208469055375 0.0853463317318213
+doc clustering TP, TN (DBpedia):  0.15053763440860216 0.052946872286005184
+doc clustering TP, TN (TMN):  0.27254601226993863 0.01489680754762807
+doc clustering TP, TN (Webs):  0.24898785425101214 0.03753304850686483
 ############################################
-document completion ppl:  17761.1
+source document completion ppl:  17761.1
 ############################################
 ```
 
