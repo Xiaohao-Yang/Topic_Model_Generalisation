@@ -221,5 +221,5 @@ def evaluation(model, epoch, data_dict, args):
         ppl = model.perplexity(data_dict['test1_data'], data_dict['test_1_label'], data_dict['test2_data'], emb)
 
     print('############################################')
-    print('document completion ppl: ', ppl)
+    print('source document completion ppl: ', ppl)
     print('############################################')
