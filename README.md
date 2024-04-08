@@ -86,7 +86,7 @@ source document completion ppl:  15433.4
 ############################################
 ```
 
-Here is one of our results (Table 5), for 5 runs of 20News as the source, the rest as the targets, where the number of topics for models is set as 50. 
+Here is one of our results (Table 4), for 5 runs of 20News as the source, and the rest as the targets, where the number of topics for models is set as 50. 
 <p align="center">
   <img src="results.png" alt="results" width="1000"/>
 </p>
