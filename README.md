@@ -42,9 +42,9 @@ python main.py --model NVDM --dataset combined_20News_RestAll --n_topic 50 --use
 ```
 
 # Results
-We evaluate the document representation quality at every evaluation step (e.g. --eval_step=5). The evaluation is done by document classification and clustering for both source and target documents.
+The evaluation is done by document classification and clustering for both source and target documents.
 
-A running example without Greg at epoch 50:
+A running example **without Greg** at epoch 50:
 ```python
 ############################################
 Evaluation at: 
@@ -66,7 +66,7 @@ source document completion ppl:  15523.4
 ############################################
 ```
 
-A running example with Greg at epoch 50:
+A running example **with Greg** at epoch 50:
 ```python
 ############################################
 Evaluation at: 
