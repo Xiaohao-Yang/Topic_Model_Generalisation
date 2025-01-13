@@ -95,33 +95,7 @@ Here is one of our results (Table 4), for 5 runs of 20News as the source, and th
 </p>
 Overall, Greg brings significant (Table 9-11) improvements to the original models in most cases regarding neural topical generalisation. See more details in our [Paper](https://arxiv.org/pdf/2307.12564.pdf).
 
-# References
-Our code is based on the following implementations:
 
-* For NVDM: [Code](https://github.com/visionshao/NVDM).
-* For PLDA: [Code](https://github.com/estebandito22/PyTorchAVITM).
-```python
-@MISC {Carrow2018,
-    author       = "Stephen Carrow",
-    title        = "PyTorchAVITM: Open Source AVITM Implementation in PyTorch",
-    howpublished = "Github",
-    month        = "dec",
-    year         = "2018"
-}
-```
-* For SCHOLAR and CLNTM: [Code](https://github.com/nguyentthong/CLNTM).
-```python
-@inproceedings{
-nguyen2021contrastive,
-title={Contrastive Learning for Neural Topic Model},
-author={Thong Thanh Nguyen and Anh Tuan Luu},
-booktitle={Advances in Neural Information Processing Systems},
-editor={A. Beygelzimer and Y. Dauphin and P. Liang and J. Wortman Vaughan},
-year={2021},
-url={https://openreview.net/forum?id=NEgqO9yB7e}
-}
-```
-* For Pytorch Sinkhorn distance: [Code](https://github.com/ethanhezhao/Tensorflow_Pytorch_Sinkhorn_OT).
 
 
 # Citation 
